@@ -1,0 +1,9 @@
+1. Cloning Repositories via command line 
+  - This means saving a local copy of the repository 
+  - Ensure git package is installed: type git --version. Should say something like git version 2.47.0 (or the latest version you have installed on your computer) 
+  - Then, go to the repo and click on the green "<> Code" button, select HTTPS and copy URL 
+  - Then, go to command line / terminal and type git clone URL 
+  - If it is a private repo, need to use your Personal Access Token (PAT) to access. 
+    - Username: same as Github (joelteo1994)
+    - Typing Github password is deprecated for security reasons 
+    - Generate PAT by going to profile on top right, settings -> developer settings -> generate token 
