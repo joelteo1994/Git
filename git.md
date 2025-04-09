@@ -108,3 +108,10 @@ However, the local main branch still dosen't know about them yet; it is outdated
     - git push -u origin main 
 - Note that this error also occurs if the branch I am trying to push up is not as updated at the remote branch 
     - But if branch dosent exist yet, then can push without any issues 
+
+## Other notes 
+- Sometimes when pulling from remote, will open Vim — the default command-line text editor Git uses for things like merge commits. To exit: 
+    - Press Esc (exit any typing mode)
+    - Type :wq (write and quit — the colon is important)
+    - Press Enter
+- If push to main, a pull request will not be triggered as you are not creating another branch
