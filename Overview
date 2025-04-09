@@ -1,0 +1,26 @@
+Git Overview 
+
+(1) Git is an effective way to implement version control
+  - Locally enabled, can version-control items on desktop without complicated server software
+  - Version control important especially when multiple collaborators working on project and programming in parallel
+
+(2) Workflow (for individual user or people working in sequential fashion without overlap)
+  - $ git init myproject (initialisation of project) 
+  - $ cd myproject (directory that contains the project files as well as the control files that store the historical elements)
+  - $ git add (notices files, putting them into holding zone before committing) 
+  - $ git commit -m"Importing all the code" (permanently records a historical record of the files as they exist at that given point in time)
+
+(3) Workflow (for team collaboration; i.e. distributed git where people work in parallel/different but overlapping times. Below assume Doug and Dana)
+  (Doug's graphic logo design work)
+  - doug.$ git checkout master 
+  - doug.$ git commit -a -m"My new logo"
+  - doug.$ git push 
+
+  (Dana's code work)
+  - dana.$ git checkout -b danasfeature 
+  - dana.$ git commit -a -m"My feature code"
+  - dana.$ git push origin danasfeature 
+
+  (Merging both) 
+  - doug.$ git pull 
+  - doug.$ git merge danasfeature
