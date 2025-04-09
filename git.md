@@ -83,6 +83,8 @@ Main terminal functions to enable this workflow on git  are:
     - can be <type>: <short summary>
     - e.g. add sentiment analysis module, fix bug in table extraction, refactor section parser logic 
 - git push -u origin desired_branch_name (pushes the new branch to Github and set it to track that branch for future git push)
+    - TLDR: "Create the branch on GitHub if it doesn’t exist, and remember that this branch is tied to it from now on."
+    - Then in future can just do git push and git pull 
 #### Then, go to Github to 
 - Navigate to repository 
 - Will see a Compare & Pull Request banner - click it 
@@ -97,3 +99,12 @@ However, the local main branch still dosen't know about them yet; it is outdated
 - git branch -d desired_branch_name (delete the local feature branch)
 - git push origin --delete desired_branch_name
     
+## Important Note about version discrepancies between local and remote
+- You can only push stuff from local to remote if the local version is at least as updated as the remote. If not will have a fatal error 
+    - E.g. this error can occur if we initialise a repo with readme and gitignore and other things that locally I dont have
+- To update local version, just need to do a pull request 
+    - git pull origin main 
+- Then can proceed with the push 
+    - git push -u origin main 
+- Note that this error also occurs if the branch I am trying to push up is not as updated at the remote branch 
+    - But if branch dosent exist yet, then can push without any issues 
