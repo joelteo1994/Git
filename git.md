@@ -85,6 +85,10 @@ Main terminal functions to enable this workflow on git  are:
 - git push -u origin desired_branch_name (pushes the new branch to Github and set it to track that branch for future git push)
     - TLDR: "Create the branch on GitHub if it doesn’t exist, and remember that this branch is tied to it from now on."
     - Then in future can just do git push and git pull 
+    - Note: must explicitly run -u the first time to create tracking. After that, git pull knows which remote branch to sync with 
+        - Run git branch -vv to see what are the local/remote pairs established 
+        - "-u" is a flag that establishes a local tracking relationship between my branch and the remote branch
+            - shorthand for --set-upstream 
 #### Then, go to Github to 
 - Navigate to repository 
 - Will see a Compare & Pull Request banner - click it 
