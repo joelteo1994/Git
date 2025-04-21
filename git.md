@@ -110,7 +110,34 @@ However, the local main branch still dosen't know about them yet; it is outdated
     - But if branch dosent exist yet, then can push without any issues 
 
 ## Working with Multiple Git Repositories in VS Code (Each linked to a different Github Repo)
-- Sometimes  
+- Sometimes you're working on multiple projects (multi-tasking) - each with its own local folder and Github repo. Here's how to manage them efficiently in VSCode. 
+    - Opening Multiple Repos (two ways)
+        1. Open in Separate VS Code Windows to keep each repo fully isolated 
+            1. Open your first project (e.g. Code-References)
+            2. Press Cmd + Shift + N (Mac) or Ctrl + Shift + N (Windows) to open a new VS Code window 
+            3. In the new window, open another folder (e.g. Cheatsheets)
+            In this case, each window has its own file tree, terminal, and Git context 
+                - Each terminal window is independent, so can safely push, commit, and even activate diff venv w/o affecting the other 
+        2. Use a multi-root workspace: ideal if want everything in one view 
+            1. Open first folder 
+            2. Go to File > Add Folder to Workspace 
+            3. Add the second project folder 
+            4. Save the workspace as a .code-workspace file (optional)
+            Note: Git actions are still scoped per folder, so make sure in the correct terminal tab or file tree context when committing or pushing 
+- Other tips 
+    - Be careful with terminal context: even if open a new folder in VS Code, your terminal might still be operating in the previous folder's context. E.g. 
+        - Opened Cheatsheets in VS Code 
+        - But terminal still in Code-References
+        - So running git add git.md will fail since that file lives in Cheatsheets and not Code-References 
+        - Hence, always run 
+            - pwd: Confirm current working directory 
+            - ls: show files in folder 
+            - cd ~/path/to/the/folder-you-want 
+        -Then can 
+            - git checkout -b new_branch 
+            - git add file_name 
+            - git commit -m "Your message" 
+            - git pull -u origin new_branch
 
 
 ## Other notes 
