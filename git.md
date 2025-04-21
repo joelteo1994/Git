@@ -109,9 +109,25 @@ However, the local main branch still dosen't know about them yet; it is outdated
 - Note that this error also occurs if the branch I am trying to push up is not as updated at the remote branch 
     - But if branch dosent exist yet, then can push without any issues 
 
+## Working with Multiple Git Repositories in VS Code (Each linked to a different Github Repo)
+- Sometimes  
+
+
 ## Other notes 
 - Sometimes when pulling from remote, will open Vim — the default command-line text editor Git uses for things like merge commits. To exit: 
     - Press Esc (exit any typing mode)
     - Type :wq (write and quit — the colon is important)
     - Press Enter
 - If push to main, a pull request will not be triggered as you are not creating another branch
+- Github may not automatically show the pull request (PR) banner if you reuse a branch name that was previously used to commit changes, even if that branch has been deleted locally and on Github remotely. To ensure a smoother PR experience, either 
+    - Use new, unique branch name for each round of work (i.e. no repeats)
+    - Reus the same branch name, but manually create the pull request, either by 
+        1. Clicking on the link that appears in the terminal after pushing (i.e. run "git push -u origin branch_name")
+            - URL: something like https://github.com/yourname/repo/pull/new/branch_name
+        2. Going onto Github manually and 
+            - Navigate to repo 
+            - Go to Pull Requests tab -> New Pull Request 
+            - Set 
+                - Base: main 
+                - Compare: branch_name 
+            - Click Create pull request 
